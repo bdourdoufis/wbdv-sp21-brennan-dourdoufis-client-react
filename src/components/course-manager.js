@@ -14,12 +14,12 @@ class CourseManager extends React.Component {
 
     addCourse = () => {
         const newCourse = {
-            title: "New Course",
+            title: document.getElementById("new-course-title").value,
             owner: "me",
             lastModified: "Never"
         }
 
-        courseService.addCourse(newCourse)
+        courseService.createCourse(newCourse)
             .then(course => this.setState(
                 (prevState) => ({
                     ...prevState,
@@ -28,6 +28,7 @@ class CourseManager extends React.Component {
                         course
                     ]
                 })))
+            .then(document.getElementById("new-course-title").value = "")
     }
 
     updateCourse = (course) => {
@@ -51,33 +52,25 @@ class CourseManager extends React.Component {
     render() {
         return(
             <div>
-                <Link to="/courses/grid">
-                    <i className="fas fa-2x fa-th float-right"></i>
+                <Link to="/">
+                    <i className="fas fa-2x fa-home float-right"></i>
                 </Link>
-                <h2>Course Table</h2>
-                <table className="table">
-                    <tbody>
-                    {/*<CourseRow title="CS1234" owner="alice" lastModified={"1/12/34"}/>*/}
-                    {/*<CourseRow title="CS2345" owner="bob"   lastModified={"2/23/24"}/>*/}
-                    {/*<CourseRow title="CS3456" owner="charlie" lastModified={"3/22/14"}/>*/}
-                    {/*<CourseRow title="CS4567" owner="dan"   lastModified={"4/12/36"}/>*/}
-                    {
-                        this.props.courses.map((course, ndx) =>
-                            <CourseRow
-                                updateCourse={this.props.updateCourse}
-                                deleteCourse={this.props.deleteCourse}
-                                key={ndx}
-                                course={course}
-                                title={course.title}
-                                owner={course.owner}
-                                lastModified={course.lastModified}
-                            />)
-                    }
-                    </tbody>
-                </table>
+                <h1>Course Manager</h1>
+                <input type="text" id="new-course-title" className="title-input-bar" placeholder="New Course Title"></input>
+                <button onClick={this.addCourse}>
+                    Add Course
+                </button>
+                <Route path="/courses/table" exact={true} >
+                    <CourseTable
+                        updateCourse={this.updateCourse}
+                        deleteCourse={this.deleteCourse}
+                        courses={this.state.courses}/>
+                </Route>
+                <Route path="/courses/grid" exact={true} >
+                    <CourseGrid courses={this.state.courses}/>
+                </Route>
             </div>
         )
     }
 }
-
 export default CourseManager

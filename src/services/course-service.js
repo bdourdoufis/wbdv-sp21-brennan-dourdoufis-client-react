@@ -34,3 +34,10 @@ export const deleteCourse = (courseId) =>
         method: 'DELETE'
     })
         .then(response => response.json())
+
+export default {
+    findAllCourses,
+    deleteCourse: deleteCourse,
+    createCourse,
+    updateCourse: updateCourse
+}
