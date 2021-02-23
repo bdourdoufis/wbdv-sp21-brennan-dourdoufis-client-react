@@ -1,8 +1,11 @@
 import React from 'react'
 import {Link} from "react-router-dom";
 
-const CourseEditor = ({history}) =>
-    <div className="container">
+const CourseEditor = () =>
+    <div>
+        <Link to="/courses/table">
+            <i className="fas fa-arrow-left float-left fa-3x"></i>
+        </Link>
         <h1>Course Editor</h1>
         <div className="row">
             <div className="col-4">

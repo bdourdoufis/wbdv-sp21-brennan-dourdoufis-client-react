@@ -47,3 +47,41 @@ code {
   left: 100%;
   margin-left: -70px;
 }
+
+.formatted-card {
+  width: 18rem;
+  margin: 15px;
+}
+
+.image-container {
+  position: relative;
+  width: 100%;
+}
+
+/* Style the button and place it in the middle of the container/image */
+.image-container .button-icon-row {
+  position: absolute;
+  top: 5%;
+  left: 80%;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+.fa-times {
+  color: red;
+  cursor: pointer;
+}
+
+.fa-check {
+  color: green;
+  cursor: pointer;
+}
+
+.fa-trash {
+  cursor: pointer;
+}
+
+.fa-edit {
+  cursor: pointer;
+}

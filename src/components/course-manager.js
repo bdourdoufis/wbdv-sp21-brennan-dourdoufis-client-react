@@ -59,20 +59,20 @@ class CourseManager extends React.Component {
                 <Link to="/">
                     <i className="fas fa-2x fa-home float-right"></i>
                 </Link>
-                <h1>Course Manager</h1>
-                <input type="text" id="new-course-title" className="title-input-bar" placeholder="New Course Title"></input>
-                <button class="btn btn-main btn-danger btn-primary btn-circle pull-right" onClick={this.addCourse}><i className="fa fa-plus"></i></button>
                 <Route path="/courses/table" exact={true} >
                     <CourseTable
+                        addCourse={this.addCourse}
                         updateCourse={this.updateCourse}
                         deleteCourse={this.deleteCourse}
                         courses={this.state.courses}/>
                 </Route>
-                <Route path="/courses/grid" exact={true} >
-                    <CourseGrid courses={this.state.courses}/>
+                <Route path="/courses/grid" exact={true} histort>
+                    <CourseGrid
+                        addCourse={this.addCourse}
+                        updateCourse={this.updateCourse}
+                        deleteCourse={this.deleteCourse}
+                        courses={this.state.courses}/>
                 </Route>
-                <button type="button" className="btn btn-main btn-danger btn-primary btn-circle bottom-button"
-                        data-placement="right" title="Menu" onClick={this.addCourse}><i className="fa fa-plus"></i></button>
             </div>
         )
     }

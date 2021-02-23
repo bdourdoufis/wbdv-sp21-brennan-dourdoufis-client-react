@@ -12,6 +12,11 @@ export default class CourseTable
     render() {
         return(
             <div>
+                <h1>Course Manager</h1>
+                <input type="text" id="new-course-title" className="title-input-bar"
+                       placeholder="New Course Title"></input>
+                <button className="btn btn-main btn-danger btn-primary btn-circle pull-right" onClick={this.props.addCourse}>
+                    <i className="fa fa-plus"></i></button>
                 <Link to="/courses/grid">
                     <i className="fas fa-2x fa-th float-right"></i>
                 </Link>
@@ -39,6 +44,8 @@ export default class CourseTable
                     }
                     </tbody>
                 </table>
+                <button type="button" className="btn btn-main btn-danger btn-primary btn-circle bottom-button"
+                        data-placement="right" title="Menu" onClick={this.props.addCourse}><i className="fa fa-plus"></i></button>
             </div>
         )
     }
