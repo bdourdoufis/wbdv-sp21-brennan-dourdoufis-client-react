@@ -13,12 +13,8 @@ function App() {
                 <Route path="/courses">
                     <CourseManager/>
                 </Route>
-                <Route path="/courses/table/edit/">
-                    <CourseEditor/>
-                </Route>
-                <Route path="/courses/grid/edit/">
-                    <CourseEditor/>
-                </Route>
+                <Route path="/courses/:layout/edit/:courseId" exact={true}
+                       render={(props) => <CourseEditor {...props}/>}/>
             </div>
         </BrowserRouter>
     );
