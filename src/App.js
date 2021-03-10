@@ -13,7 +13,10 @@ function App() {
                 <Route path="/courses">
                     <CourseManager/>
                 </Route>
-                <Route path="/courses/editor" exact={true}>
+                <Route path="/courses/table/edit/">
+                    <CourseEditor/>
+                </Route>
+                <Route path="/courses/grid/edit/">
                     <CourseEditor/>
                 </Route>
             </div>

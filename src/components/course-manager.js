@@ -66,7 +66,7 @@ class CourseManager extends React.Component {
                         deleteCourse={this.deleteCourse}
                         courses={this.state.courses}/>
                 </Route>
-                <Route path="/courses/grid" exact={true} histort>
+                <Route path="/courses/grid" exact={true}>
                     <CourseGrid
                         addCourse={this.addCourse}
                         updateCourse={this.updateCourse}

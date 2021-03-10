@@ -1,5 +1,5 @@
 import React, {useState} from 'react'
-import {Link, useHistory} from "react-router-dom";
+import {Link} from "react-router-dom";
 
 const CourseCard = (
     {
@@ -12,8 +12,6 @@ const CourseCard = (
     }) => {
     const[editing, setEditing] = useState(false)
     const[newTitle, setNewTitle] = useState(title)
-    const history = useHistory()
-    history.push('/courses/grid')
 
     const saveTitle = () => {
         setEditing(false)
@@ -53,7 +51,7 @@ const CourseCard = (
                 }
                 <p className="card-text">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed
                     do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
-                <Link to="/courses/editor" className="btn btn-primary" onClick={history.push('/courses/grid')}>
+                <Link to={"/courses/grid/edit/" + course._id} className="btn btn-primary">
                     Go to Editor
                 </Link>
             </div>
