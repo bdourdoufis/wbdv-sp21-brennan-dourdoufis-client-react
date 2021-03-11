@@ -85,3 +85,11 @@ code {
 .fa-edit {
   cursor: pointer;
 }
+
+.lesson-tabs {
+  margin: 0px 40px;
+}
+
+.topic-pills {
+  margin: 0px 40px;
+}
