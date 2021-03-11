@@ -66,19 +66,19 @@ const dtpm = (dispatch) => {
                     module
                 })),
         findModulesForCourse: (courseId) => {
+            topicService.findTopicsForLesson(undefined).then(topics => dispatch({
+                type: "FIND_TOPICS_FOR_LESSON",
+                topics
+            }));
+            lessonService.findLessonsForModule(undefined).then(lessons => dispatch({
+                type: "FIND_LESSONS_FOR_MODULE",
+                lessons
+            }));
             moduleService.findModulesForCourse(courseId)
                 .then(theModules => dispatch({
                     type: "FIND_MODULES_FOR_COURSE",
                     modules: theModules
                 }));
-            lessonService.findLessonsForModule(undefined).then(lessons => dispatch({
-                type: "FIND_LESSONS_FOR_MODULE",
-                lessons
-            }));
-            topicService.findTopicsForLesson(undefined).then(topics => dispatch({
-                type: "FIND_TOPICS_FOR_LESSON",
-                topics
-            }));
         }
     }
 }

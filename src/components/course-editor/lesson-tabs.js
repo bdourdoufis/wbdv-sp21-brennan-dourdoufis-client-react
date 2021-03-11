@@ -45,6 +45,10 @@ const stpm = (state) => ({
 })
 const dtpm = (dispatch) => ({
     findLessonsForModule: (moduleId) => {
+        topicService.findTopicsForLesson(undefined).then(topics => dispatch({
+            type: "FIND_TOPICS_FOR_LESSON",
+            topics
+        }));
         lessonService.findLessonsForModule(moduleId)
             .then(lessons => dispatch({
                 type: "FIND_LESSONS_FOR_MODULE",
