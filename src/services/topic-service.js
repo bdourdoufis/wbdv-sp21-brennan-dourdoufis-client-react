@@ -36,8 +36,8 @@ export const findTopic = (topicId) =>
         .then(response => response.json());
 
 
-const api = {
+const topicService = {
     createTopic, findTopicsForLesson, deleteTopic, updateTopic, findTopic
 }
 
-export default api;
+export default topicService;

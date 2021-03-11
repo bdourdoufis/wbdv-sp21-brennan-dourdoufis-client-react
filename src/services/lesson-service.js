@@ -35,8 +35,8 @@ export const findLesson = (lessonId) =>
     fetch(`${LESSON_URL}/${lessonId}`)
         .then(response => response.json());
 
-const api = {
+const lessonService = {
     createLesson, findLessonsForModule, deleteLesson, updateLesson, findLesson
 }
 
-export default api;
+export default lessonService;
