@@ -1,4 +1,4 @@
-const WIDGETS_URL = process.env.REACT_APP_WIDGET_URL
+const WIDGETS_URL = "http://localhost:8080/api"
 
 export const createWidget = (tid) =>
     fetch(`${WIDGETS_URL}/topics/${tid}/widgets`, {
