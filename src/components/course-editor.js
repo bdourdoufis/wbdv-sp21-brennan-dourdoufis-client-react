@@ -5,15 +5,18 @@ import {combineReducers, createStore} from "redux";
 import moduleReducer from "../reducers/module-reducer";
 import lessonReducer from "../reducers/lesson-reducer";
 import topicReducer from "../reducers/topic-reducer";
+import widgetReducer from "../reducers/widget-reducer";
 import {Provider} from "react-redux";
 import ModuleList from "./course-editor/module-list";
 import LessonTabs from "./course-editor/lesson-tabs";
 import TopicPills from "./course-editor/topic-pills";
+import WidgetList from "./widgets/widget-list";
 
 const reducer = combineReducers({
     moduleReducer: moduleReducer,
     lessonReducer: lessonReducer,
-    topicReducer: topicReducer
+    topicReducer: topicReducer,
+    widgetReducer: widgetReducer
 })
 
 const store = createStore(reducer)
@@ -23,16 +26,20 @@ class CourseEditor extends React.Component {
         courseName: "",
         modules: [],
         lessons: [],
-        topics: []
+        topics: [],
+        widgets: []
     }
 
-    render() {
+    componentDidMount() {
         const {courseId} = this.props.match.params;
-        const {layout} = this.props.match.params;
         courseService.findCourseById(courseId).then(foundCourse => this.setState(
             (prevState) => ({
                 courseName: foundCourse.title
             })))
+    }
+
+    render() {
+        const {layout} = this.props.match.params;
         return(
         <Provider store={store}>
             <div>
@@ -50,6 +57,8 @@ class CourseEditor extends React.Component {
                         <LessonTabs/>
                         <br/>
                         <TopicPills/>
+                        <br/>
+                        <WidgetList/>
                     </div>
                 </div>
             </div>

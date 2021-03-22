@@ -19,6 +19,8 @@ function App() {
                        render={(props) => <CourseEditor {...props}/>}/>
                 <Route path="/courses/:layout/edit/:courseId/modules/:moduleId/lessons/:lessonId" exact={true}
                        render={(props) => <CourseEditor {...props}/>}/>
+                <Route path="/courses/:layout/edit/:courseId/modules/:moduleId/lessons/:lessonId/topics/:topicId" exact={true}
+                       render={(props) => <CourseEditor {...props}/>}/>
             </div>
         </BrowserRouter>
     );
