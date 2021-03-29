@@ -3,7 +3,7 @@ import React from 'react'
 const ImageWidget = ({widget, setWidget, editing}) => {
     return (
         <div>
-            <h2>Image Widget</h2>
+            <h2>Image Widget {widget.id}</h2>
             <img src={widget.url} width={widget.width} height={widget.height}/>
             {
                 editing &&

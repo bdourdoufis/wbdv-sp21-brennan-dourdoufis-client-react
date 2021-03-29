@@ -3,6 +3,7 @@ import React, {useState, useEffect} from 'react'
 const ParagraphWidget = ({widget, setWidget, editing}) => {
     return (
         <div>
+            <h2>Paragraph Widget {widget.id}</h2>
             {
                 editing &&
                 <div>
