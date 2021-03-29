@@ -4,7 +4,6 @@ import Home from "./components/home"
 import CourseEditor from "./components/course-editor";
 
 function App() {
-    require('dotenv').config();
     return (
         <BrowserRouter>
             <div className="container-fluid">
