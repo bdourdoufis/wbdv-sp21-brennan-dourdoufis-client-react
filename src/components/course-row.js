@@ -9,7 +9,8 @@ const CourseRow = (
         course,
         lastModified,
         title,
-        owner
+        owner,
+        allCourses
     }) => {
     const[editing, setEditing] = useState(false)
     const[newTitle, setNewTitle] = useState(title)
@@ -46,6 +47,12 @@ const CourseRow = (
                 <i onClick={() => deleteCourse(course)} className="fas fa-trash"></i>
                 {!editing && <i onClick={() => setEditing(true)} className="fas fa-edit"></i>}
                 {editing && <i onClick={() => saveTitle()} className="fas fa-check"></i>}
+            </td>
+            <td>
+                <Link className="float-right"
+                      to={{pathname: `/courses/${course._id}/quizzes`, courses: allCourses}}>
+                    Quizzes
+                </Link>
             </td>
         </tr>
     )

@@ -93,3 +93,14 @@ code {
 .topic-pills {
   margin: 0px 40px;
 }
+
+.quizTableRow {
+  display: table;
+  width: 100%;
+  table-layout: fixed;
+  border-spacing: 10px;
+}
+
+.quizTableColumn {
+  display: table-cell;
+}
