@@ -27,6 +27,7 @@ const MultipleChoiceQuestion = ({question}) => {
                                 'list-group-item-danger' : 'list-group-item'}`}>
                                 <label><input
                                     onClick={() => {
+                                        question.answer = choice
                                         setYourAnswer(choice)
                                     }}
                                     type="radio"
@@ -39,7 +40,6 @@ const MultipleChoiceQuestion = ({question}) => {
             <p>
                 Your answer: {yourAnswer}
             </p>
-            <button className="btn btn-success">Grade</button>
         </div>
     )
 }

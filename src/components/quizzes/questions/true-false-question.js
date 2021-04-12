@@ -23,6 +23,7 @@ const TrueFalseQuestion = ({question}) => {
                         'list-group-item-danger' : 'list-group-item'}`}>
                     <label><input
                         onClick={() => {
+                            question.answer = "true"
                             setYourAnswer("true")
                         }}
                         type="radio"
@@ -36,6 +37,7 @@ const TrueFalseQuestion = ({question}) => {
                         'list-group-item-danger' : 'list-group-item'}`}>
                     <label><input
                         onClick={() => {
+                            question.answer = "false"
                             setYourAnswer("false")
                         }}
                         type="radio"
@@ -45,7 +47,6 @@ const TrueFalseQuestion = ({question}) => {
             <p>
                 Your answer: {yourAnswer}
             </p>
-            <button className="btn btn-success">Grade</button>
         </div>
     )
 }

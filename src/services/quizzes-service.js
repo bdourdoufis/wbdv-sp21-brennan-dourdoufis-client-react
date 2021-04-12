@@ -1,4 +1,4 @@
-const QUIZZES_URL = 'http://localhost:4000/api/quizzes';
+const QUIZZES_URL = process.env.QUIZ_SERVICE_URI || 'http://localhost:4000/api/quizzes';
 const findAllQuizzes = () => {
     return fetch(QUIZZES_URL)
         .then(response => response.json())
@@ -8,7 +8,7 @@ const findQuizById = (qid) => {
         .then(response => response.json())
 }
 const submitQuiz = (quizId, questions) => {
-    fetch(`http://localhost:4000/api/quizzes/${quizId}/attempts`, {
+    fetch(`${QUIZZES_URL}/${quizId}/attempts`, {
         method: 'POST',
         body: JSON.stringify(questions),
         headers: {
@@ -17,8 +17,8 @@ const submitQuiz = (quizId, questions) => {
     }).then(response => response.json())
 }
 const findAttemptsByQuizId = (qid) => {
-    return fetch(`http://localhost:4000/api/quizzes/${qid}/attempts`).then(response => response.json())
+    return fetch(`${QUIZZES_URL}/${qid}/attempts`).then(response => response.json())
 }
 export default {
-    findAllQuizzes, findQuizById
+    findAllQuizzes, findQuizById, submitQuiz, findAttemptsByQuizId
 }
