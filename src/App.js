@@ -6,7 +6,6 @@ import QuizzesList from "./components/quizzes/quizzes-list";
 import Quiz from "./components/quizzes/quiz"
 
 function App() {
-    require('dotenv').config()
     return (
         <BrowserRouter>
             <div className="container-fluid">

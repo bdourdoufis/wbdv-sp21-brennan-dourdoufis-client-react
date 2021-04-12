@@ -1,6 +1,6 @@
 import {} from 'dotenv/config'
 
-const QUIZZES_URL = process.env.QUIZ_SERVICE_URI || 'http://localhost:4000/api/quizzes';
+const QUIZZES_URL = 'http://wbdv-bcd-sp21-server-node.herokuapp.com/api/quizzes'; //'http://localhost:4000/api/quizzes';
 
 const findAllQuizzes = () => {
     return fetch(QUIZZES_URL)
