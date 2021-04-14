@@ -1,4 +1,4 @@
-const WIDGETS_URL = "http://wbdv-sp21-bdourdoufis-server-j.herokuapp.com/api"
+const WIDGETS_URL = "https://wbdv-sp21-bdourdoufis-server-j.herokuapp.com/api"
 
 export const createWidget = (tid) =>
     fetch(`${WIDGETS_URL}/topics/${tid}/widgets`, {
